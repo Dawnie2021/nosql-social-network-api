@@ -32,16 +32,16 @@ module.exports = {
         res.status(500).json(err);
       }
     },
-    async deleteUser(req, res) {
+    async deleteThought(req, res) {
       try {
-        const user = await User.findOneAndDelete({ _id: req.params.userId })
+        const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId })
          
     
-        if (!user) {
-          return res.status(404).json({ message: 'No user with that ID' });
+        if (!thought) {
+          return res.status(404).json({ message: 'No thought with that ID' });
         }
     
-        res.json({message: `${user.username} has been deleted!`});
+        res.json({message: `${thought.thoughtText} has been deleted!`});
       } catch (err) {
         res.status(500).json(err);
       }
