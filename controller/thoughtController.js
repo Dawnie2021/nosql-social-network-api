@@ -48,14 +48,16 @@ module.exports = {
     },
     //    reactions api
     async addReaction(req, res) {
+      console.log(req.body);
         try {
           const dbReactionData = await Thought.findOneAndUpdate(
             {_id: req.params.thoughtId}, 
-            {$addToSet: { reactions: req.body }}, 
+            {$addToSet: { reactions: req.body}}, 
             { runValidators: true, new: true }
           );
           res.json(dbReactionData);
         } catch (err) {
+          console.log(err);
           res.status(500).json(err);
         }
       },
