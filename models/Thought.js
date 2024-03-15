@@ -13,7 +13,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            
+
 
         },
 
@@ -24,7 +24,7 @@ const thoughtSchema = new Schema(
 
         reactions: [reactionSchema]
 
-        
+
     }
 )
 

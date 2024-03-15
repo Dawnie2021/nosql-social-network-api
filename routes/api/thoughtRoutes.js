@@ -9,15 +9,12 @@ const {
     deleteThought,
   } = require('../../controller/thoughtController');
   
-  // /api/users
+ 
   router.route('/')
   .get(getThoughts)
   .post(createThought);
   
-  
-  
-  
-//   // /api/users/:userId
+
   router.route('/:thoughtId')
   .get(getSingleThought)
   .delete(deleteThought)
